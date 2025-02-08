@@ -1,143 +1,157 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>MixerPro</title>
+    <title>Гра: З'єднай слова</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            user-select: none;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .card {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            border: 2px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: grab;
+            background-color: white;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-shadow: 1px 1px 3px black;
+        }
+        .dropzone {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            border: 2px dashed black;
+            display: inline-block;
+            margin: 5px;
+            position: relative;
+            background-color: #ddd;
+        }
+        .dropzone .card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            cursor: grab;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .correct {
+            background-color: lightgreen !important;
+        }
+        .incorrect {
+            background-color: lightcoral !important;
+        }
+    </style>
 </head>
 <body>
-    <div class="top-bar">
-        <div class="company-name">MixerPro</div>
-        <div class="search-bar">
-            <input type="text" placeholder="Пошук...">
-            <button type="submit">Пошук</button>
-        </div>
+    <h1>Гра: З'єднай слова</h1>
+    
+    <div class="container" id="fixedCards">
+        <div class="card" data-match="1" style="background-image: url('lock.jpg');">Замок</div>
+        <div class="card" data-match="2" style="background-image: url('bow.jpg');">Лук</div>
+        <div class="card" data-match="3" style="background-image: url('bank.jpg');">Банк</div>
+        <div class="card" data-match="4" style="background-image: url('braid.jpg');">Коса</div>
+        <div class="card" data-match="5" style="background-image: url('island.jpg');">Острів</div>
+        <div class="card" data-match="6" style="background-image: url('letter.jpg');">Лист</div>
     </div>
-
-    <nav>
-        <ul class="main-menu">
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">Каталог</a></li>
-            <li><a href="#">Цены</a></li>
-            <li><a href="#">Заказать</a></li>
-            <li><a href="#">Контакты</a></li>
-            <li><a href="#">Доставка</a></li>
-            <li><a href="#">Производители</a></li>
-        </ul>
-    </nav>
-
-    <div class="product">
-        <h1>Міксер Tefal HT450B38</h1>
-        <img class="main-image" src="mixer1.jpg" alt="Mixer">
-        <div class="product-gallery">
-            <img src="mixer1.jpg" alt="Mixer 1">
-            <img src="mixer2.jpg" alt="Mixer 2">
-            <img src="mixer3.jpg" alt="Mixer 3">
-            <img src="mixer4.jpg" alt="Mixer 4">
-            <img src="mixer5.jpg" alt="Mixer 5">
-        </div>
-        <div class="product-description">
-            <h2>Опис</h2>
-            <p>Зручний і швидкий міксер Tefal HT450B38 для ваших кулінарних ідей! Мотор потужністю 450 Вт швидко впорається з поставленим завданням, а лаконічний дизайн сподобається кожній господині!</p>
-            <h3>Управління</h3>
-            <p>5 швидкостей і турборежим забезпечують прекрасний контроль управління, що б ви не готували.</p>
-            <h3>Насадки</h3>
-            <p>Завдяки 2 наборам аксесуарів з нержавіючої сталі - віночки для рідкого тесту, тесту для пирогів, яєць і збитих вершків і спіралі для легкого приготування тіста для піци або хліба - ручний міксер стане відмінним помічником в будь-якому рецепті.</p>
-            <h3>Комфортне використання</h3>
-            <p>Спеціальна форма міксера дозволяє ставити його на стіл таким чином, щоб в процесі перерви робочі поверхні залишалися чистими.</p>
-            <h3>Характеристики</h3>
-            <table>
-                <tr>
-                    <th>Характеристика</th>
-                    <th>Значення</th>
-                </tr>
-                <tr>
-                    <td>Кількість швидкостей</td>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td>Потужність, Вт</td>
-                    <td>450</td>
-                </tr>
-                <tr>
-                    <td>Матеріал корпусу міксера</td>
-                    <td>Пластик</td>
-                </tr>
-                <tr>
-                    <td>Кількість швидкостей</td>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td>Потужність, Вт</td>
-                    <td>450</td>
-                </tr>
-                <tr>
-                    <td>Матеріал корпусу міксера</td>
-                    <td>Пластик</td>
-                </tr>
-                <tr>
-                    <td>Тип</td>
-                    <td>Ручний</td>
-                </tr>
-                <tr>
-                    <td>Комплектація</td>
-                    <td>Міксер, Насадки для збивання, Насадки для замішування тіста</td>
-                </tr>
-                <tr>
-                    <td>Габарити (ВхШхГ)</td>
-                    <td>18.4 x 7.3 x 13.1 см</td>
-                </tr>
-                <tr>
-                    <td>Габарити в упаковці (ВхШхГ)</td>
-                    <td>21.7 х 11.4 х 21 см</td>
-                </tr>
-                <tr>
-                    <td>Вага</td>
-                    <td>1.13 кг</td>
-                </tr>
-                <tr>
-                    <td>Вага в упаковці</td>
-                    <td>1.433 кг</td>
-                </tr>
-                <tr>
-                    <td>Насадки</td>
-                    <td>Вінчики, Гаки для тіста</td>
-                </tr>
-                <tr>
-                    <td>Сфера використання</td>
-                    <td>Для дому</td>
-                </tr>
-                <tr>
-                    <td>Особливості</td>
-                    <td>Турборежим</td>
-                </tr>
-                <tr>
-                    <td>Країна реєстрації бренду</td>
-                    <td>Франція</td>
-                </tr>
-                <tr>
-                    <td>Гарантія</td>
-                    <td>24 місяці офіційної гарантії від виробника</td>
-                </tr>
-                <tr>
-                    <td>Країна-виробник товару</td>
-                    <td>Китай</td>
-                </tr>
-                <tr>
-                    <td>Колір</td>
-                    <td>Сірий</td>
-                </tr>
-
-            </table>
-        </div>
+    
+    <div class="container" id="dropZones">
+        <div class="dropzone" data-match="1"></div>
+        <div class="dropzone" data-match="2"></div>
+        <div class="dropzone" data-match="3"></div>
+        <div class="dropzone" data-match="4"></div>
+        <div class="dropzone" data-match="5"></div>
+        <div class="dropzone" data-match="6"></div>
     </div>
-	
-    <footer>
-        <p>&copy; 2024 Всі права захищені | Лабораторна робота виконана Полішко Романом Мирославовичем</p>
-    </footer>
+    
+    <div class="container" id="draggableCards">
+        <div class="card" draggable="true" data-match="1" style="background-image: url('castle.jpg');">Замок</div>
+        <div class="card" draggable="true" data-match="2" style="background-image: url('onion.jpg');">Лук</div>
+        <div class="card" draggable="true" data-match="3" style="background-image: url('riverbank.jpg');">Банк (берег річки)</div>
+        <div class="card" draggable="true" data-match="4" style="background-image: url('scythe.jpg');">Коса (знаряддя праці)</div>
+        <div class="card" draggable="true" data-match="5" style="background-image: url('archipelago.jpg');">Острів (архіпелаг)</div>
+        <div class="card" draggable="true" data-match="6" style="background-image: url('leaf.jpg');">Лист (рослини)</div>
+    </div>
+    
+    <button class="btn" onclick="window.location.reload()">Заново</button>
+    <button class="btn" onclick="checkAnswers()">Перевірити</button>
+    
+    <script>
+        const draggables = document.querySelectorAll('[draggable="true"]');
+        const dropzones = document.querySelectorAll('.dropzone');
 
-    <script src="script.js"></script>
+        draggables.forEach(card => {
+            card.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('text/plain', card.dataset.match);
+                setTimeout(() => {
+                    card.style.display = "none";
+                }, 0);
+            });
+            card.addEventListener('dragend', (e) => {
+                card.style.display = "flex";
+            });
+        });
+
+        dropzones.forEach(zone => {
+            zone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+            });
+            zone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                const matchValue = e.dataTransfer.getData('text/plain');
+                const draggedElement = document.querySelector(`[draggable="true"][data-match="${matchValue}"]`);
+                if (zone.firstChild) {
+                    document.getElementById('draggableCards').appendChild(zone.firstChild);
+                }
+                zone.appendChild(draggedElement);
+                draggedElement.style.cursor = "grab";
+                draggedElement.draggable = true;
+                draggedElement.style.display = "flex";
+            });
+        });
+
+        function checkAnswers() {
+            dropzones.forEach(zone => {
+                if (zone.firstChild) {
+                    if (zone.dataset.match === zone.firstChild.dataset.match) {
+                        zone.firstChild.classList.add('correct');
+                    } else {
+                        zone.firstChild.classList.add('incorrect');
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 </html>
